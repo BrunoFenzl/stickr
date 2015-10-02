@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Boilerplate</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../src/jquery.boilerplate.js"></script>
+		<!-- <script src="../bower_components/stats.js/build/stats.min.js"></script> -->
+
+		<style>
+			body{
+				position: relative;
+/*				min-height:3000px;
+*/			}
+
+			#innercont{
+				position: absolute;
+				top: 0;
+/*				min-height:2000px;
+*/				background-color: lightgray;
+				width: 300px;
+			}
+			#element{
+				position: absolute;
+				top: 200px;
+				background-color: red;
+				width: 300px;
+				height: 300px;
+				opacity: .6;
+			}
+
+			.bg{
+				width: 100%;
+				height: 30px;
+				border-bottom: 1px solid gray;
+			}
+
+			#innercont .bg{
+				border-bottom: 1px solid white;
+				background-color: gray;
+			}
+
+			.stuck{
+				position: fixed!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="innercont">
+			<div id="element"></div>
+		</div>
+		<script>
+			$(function() {
+				$("#element").JStick({context: window, parent: document.getElementById('innercont'), offsetTop: 50})
+				.on('JStick:dockTop', function(){console.log('dock top')})
+				.on('JStick:undockTop', function(){console.log('undock top')})
+				.on('JStick:dockBottom', function(){console.log('dock Bottom')})
+				.on('JStick:undockBottom', function(){console.log('undock Bottom')})
+			});
+
+			for (var i = 100; i >= 0; i--) {
+				var div = document.createElement('div');
+				div.className = "bg";
+				document.body.appendChild(div);
+			};
+
+			for (var j = 60; j >= 0; j--) {
+				var div = document.createElement('div');
+				div.className = "bg";
+				document.getElementById('innercont').appendChild(div);
+			};
+		</script>
+		<script>
+			// var stats = new Stats();
+			// stats.setMode( 0 ); // 0: fps, 1: ms, 2: mb
+
+			// // align top-left
+			// stats.domElement.style.position = 'fixed';
+			// stats.domElement.style.right = '0px';
+			// stats.domElement.style.top = '0px';
+
+			// document.body.appendChild( stats.domElement );
+
+			// var update = function () {
+
+			//     stats.begin();
+
+			//     // monitored code goes here
+
+			//     stats.end();
+
+			//     requestAnimationFrame( update );
+
+			// };
+
+			// requestAnimationFrame( update );
+		</script>
+	</body>
+</html>

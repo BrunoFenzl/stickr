@@ -1,0 +1,21 @@
+{
+  "name": "Stickr",
+  "version": "0.0.1",
+  "homepage": "https://github.com/drala/stickr",
+  "authors": [
+    "Bruno Fenzl <bruno@brunofenzl.com>"
+  ],
+  "description": "jQuery plugin for sticky elements",
+  "main": "src/jquery.boilerplate.js",
+  "keywords": [
+    "jquery",
+    "plugin",
+    "boilerplate",
+    "jquery-plugin",
+    "jquery-boilerplate"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "stats.js": "*"
+  }
+}
